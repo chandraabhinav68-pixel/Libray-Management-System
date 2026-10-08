@@ -21,50 +21,53 @@
             color: var(--text);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
         }
 
         .header p {
-            margin-top: 10px;
-            font-size: 1.2rem;
+            margin-top: 8px;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
 
         .container {
-            max-width: 1100px;
-            margin: 30px auto;
+            max-width: 1050px;
+            margin: 20px auto;
             padding: 0 20px;
         }
 
         .slide-card {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 35px;
+            padding: 24px 28px;
+            margin-bottom: 25px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             border: 1px solid var(--border);
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
 
         .slide-card h2 {
             color: var(--accent);
             border-bottom: 2px solid var(--accent);
-            padding-bottom: 8px;
+            padding-bottom: 6px;
             margin-top: 0;
-            font-size: 1.8rem;
+            margin-bottom: 16px;
+            font-size: 1.6rem;
         }
 
         .grid-2 {
@@ -85,13 +88,14 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         th, td {
             text-align: left;
-            padding: 12px;
+            padding: 10px 12px;
             border-bottom: 1px solid var(--border);
+            font-size: 0.92rem;
         }
 
         th {
@@ -102,17 +106,65 @@
         .code-box {
             background: #1e1e1e;
             color: #d4d4d4;
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
             font-family: "Courier New", Courier, monospace;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             overflow-x: auto;
+            line-height: 1.4;
         }
 
         img {
             max-width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Print Optimization Styles */
+        @media print {
+            body {
+                background-color: #ffffff;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .header {
+                padding: 20px;
+                background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 10px;
+            }
+
+            .slide-card {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                margin-bottom: 20px;
+                border: 1px solid #cbd5e1;
+                box-shadow: none;
+            }
+
+            .page-break {
+                page-break-before: always;
+                break-before: always;
+            }
+
+            table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .code-box {
+                background: #1e1e1e !important;
+                color: #d4d4d4 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
         }
     </style>
 </head>
@@ -151,7 +203,7 @@
     </div>
 
     <!-- Slide 2 -->
-    <div class="slide-card">
+    <div class="slide-card page-break">
         <h2>2. Object-Oriented Programming (OOP) Implementation</h2>
         <p>Comprehensive compliance with course OOP requirements through core concepts:</p>
         <table>
@@ -188,7 +240,7 @@
     </div>
 
     <!-- Slide 3 -->
-    <div class="slide-card">
+    <div class="slide-card page-break">
         <h2>3. Database Connectivity (JDBC) & DAO Architecture</h2>
         <div class="grid-2">
             <div>
@@ -216,7 +268,7 @@ try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
     </div>
 
     <!-- Slide 4 -->
-    <div class="slide-card">
+    <div class="slide-card page-break">
         <h2>4. Multithreading & Synchronization</h2>
         <p>Concurrent thread execution for background tasks and thread safety:</p>
         <div class="grid-2">
@@ -247,7 +299,7 @@ public Transaction issueBook(String uid, String iid) {
     </div>
 
     <!-- Slide 5 -->
-    <div class="slide-card">
+    <div class="slide-card page-break">
         <h2>5. Application Screenshots & User Interface</h2>
         <div class="grid-2">
             <div>
@@ -262,7 +314,7 @@ public Transaction issueBook(String uid, String iid) {
     </div>
 
     <!-- Slide 6 -->
-    <div class="slide-card">
+    <div class="slide-card page-break">
         <h2>6. Evaluation Rubric Compliance Matrix</h2>
         <table>
             <thead>
