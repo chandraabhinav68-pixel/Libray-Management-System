@@ -66,7 +66,7 @@ library-management-system/
 │   └── lms_analytics_view.jpg                      # Multithreading console screenshot
 ├── build.bat                                       # Windows build compilation script
 ├── run.bat                                         # Windows application launcher script
-└── README.md                                       # Documentation & submission guide
+└── README.md                                       # Documentation & setup guide
 ```
 
 ---
@@ -102,27 +102,3 @@ library-management-system/
    java -cp "bin:lib/sqlite-jdbc-3.45.1.0.jar" com.library.main.MainApp
    ```
    *(Note: On Windows terminal, use semicolon `;` instead of colon `:` in classpath)*
-
----
-
-## 📤 Submission Instructions (GitHub & Presentation)
-
-### Step 1: Uploading to GitHub
-1. Initialize a Git repository inside the project directory:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Completed Library Management System project"
-   ```
-2. Create a public repository named `Library-Management-System-Java` on GitHub.
-3. Link and push to GitHub:
-   ```bash
-   git remote add origin https://github.com/YOUR_USERNAME/Library-Management-System-Java.git
-   git branch -M main
-   git push -u origin main
-   ```
-4. Verify that repository visibility is set to **Public**.
-
-### Step 2: Presentation Upload
-- Open [`presentation/Library_Management_System_Presentation.html`](presentation/Library_Management_System_Presentation.html) in any web browser to view or present the interactive slide deck.
-- Alternatively, convert to PDF via Browser -> Print -> Save as PDF for offline submission.
