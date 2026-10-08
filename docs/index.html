@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System — Java GUI Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-logo">📚</span>
+                <span class="nav-title">LibraryMS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#tech">Tech Stack</a></li>
+                <li><a href="#run">How to Run</a></li>
+                <li><a href="https://github.com/chandraabhinav68-pixel/Libray-Management-System" target="_blank" class="btn-nav">GitHub ↗</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">☕ Java GUI Desktop Application</div>
+            <h1 class="hero-title">
+                Library Management<br>
+                <span class="gradient-text">System</span>
+            </h1>
+            <p class="hero-subtitle">
+                A fully featured desktop application built with <strong>Java Swing</strong>, <strong>SQLite JDBC</strong>, and <strong>Multithreading</strong> — covering OOP, DAO patterns, Collections, Generics, and Synchronization.
+            </p>
+            <div class="hero-btns">
+                <a href="https://github.com/chandraabhinav68-pixel/Libray-Management-System" target="_blank" class="btn btn-primary">
+                    View on GitHub ↗
+                </a>
+                <a href="https://github.com/chandraabhinav68-pixel/Libray-Management-System/raw/main/presentation/Library_Management_System_Presentation.pdf" target="_blank" class="btn btn-outline">
+                    Download Presentation PDF ↓
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Java Classes</span></div>
+                <div class="stat"><span class="stat-num">4</span><span class="stat-label">GUI Tabs</span></div>
+                <div class="stat"><span class="stat-num">3</span><span class="stat-label">Database Tables</span></div>
+                <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Pure Java</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="window-mock">
+                <div class="window-bar">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="window-title">Library Management System</span>
+                </div>
+                <div class="window-tabs">
+                    <span class="tab active">📚 Catalog</span>
+                    <span class="tab">👥 Users</span>
+                    <span class="tab">🔄 Issue/Return</span>
+                    <span class="tab">📊 Analytics</span>
+                </div>
+                <div class="window-body">
+                    <div class="mock-stats-row">
+                        <div class="mock-card blue">
+                            <div class="mock-card-num">24</div>
+                            <div class="mock-card-label">Total Inventory</div>
+                        </div>
+                        <div class="mock-card green">
+                            <div class="mock-card-num">12</div>
+                            <div class="mock-card-label">Registered Users</div>
+                        </div>
+                        <div class="mock-card orange">
+                            <div class="mock-card-num">5</div>
+                            <div class="mock-card-label">Active Issued</div>
+                        </div>
+                        <div class="mock-card purple">
+                            <div class="mock-card-num">$18.50</div>
+                            <div class="mock-card-label">Fines</div>
+                        </div>
+                    </div>
+                    <div class="mock-table">
+                        <div class="mock-row header-row"><span>ID</span><span>Title</span><span>Author</span><span>Status</span></div>
+                        <div class="mock-row"><span>B101</span><span>Clean Code</span><span>R.C. Martin</span><span class="status-available">In Stock</span></div>
+                        <div class="mock-row"><span>B102</span><span>Effective Java</span><span>J. Bloch</span><span class="status-issued">Issued</span></div>
+                        <div class="mock-row"><span>E201</span><span>Design Patterns</span><span>GoF</span><span class="status-available">In Stock</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <p class="section-sub">Everything a modern library needs, built in Java Swing</p>
+            <div class="features-grid">
+                <div class="feature-card" data-delay="0">
+                    <div class="feature-icon">📖</div>
+                    <h3>Catalog Management</h3>
+                    <p>Add, edit, delete and search Physical Books and E-Books with full CRUD operations and real-time search filtering.</p>
+                </div>
+                <div class="feature-card" data-delay="100">
+                    <div class="feature-icon">👤</div>
+                    <h3>User Directory</h3>
+                    <p>Register Students (3 books / 14 days) and Faculty members (10 books / 30 days) with role-based borrowing policies.</p>
+                </div>
+                <div class="feature-card" data-delay="200">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Issue & Return</h3>
+                    <p>Process book issues and returns with automatic due date tracking and polymorphic overdue fine calculations.</p>
+                </div>
+                <div class="feature-card" data-delay="300">
+                    <div class="feature-icon">🧵</div>
+                    <h3>Multithreading</h3>
+                    <p>Background fine sweep (Runnable) and catalog backup export (Callable&lt;Boolean&gt;) run asynchronously without freezing the UI.</p>
+                </div>
+                <div class="feature-card" data-delay="400">
+                    <div class="feature-icon">🗄️</div>
+                    <h3>SQLite Database</h3>
+                    <p>All data persisted in an embedded SQLite database via JDBC PreparedStatements with SQL injection protection.</p>
+                </div>
+                <div class="feature-card" data-delay="500">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Real-time metrics, thread task console logs, and live inventory / user / fine summaries on the analytics tab.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="section dark-section" id="architecture">
+        <div class="container">
+            <h2 class="section-title white">OOP Architecture</h2>
+            <p class="section-sub white-sub">Built on solid Object-Oriented Design Principles</p>
+            <div class="arch-grid">
+                <div class="arch-box">
+                    <h3>🔗 Interfaces</h3>
+                    <div class="code-block">
+                        <code><span class="kw">interface</span> <span class="cls">Borrowable</span> {<br>
+&nbsp;&nbsp;<span class="kw">boolean</span> isAvailable();<br>
+&nbsp;&nbsp;<span class="kw">void</span> issueItem(userId);<br>
+&nbsp;&nbsp;<span class="kw">void</span> returnItem();<br>
+}<br><br>
+<span class="kw">interface</span> <span class="cls">GenericDAO</span>&lt;T, ID&gt; {<br>
+&nbsp;&nbsp;<span class="kw">void</span> save(T entity);<br>
+&nbsp;&nbsp;T findById(ID id);<br>
+&nbsp;&nbsp;List&lt;T&gt; findAll();<br>
+}</code>
+                    </div>
+                </div>
+                <div class="arch-box">
+                    <h3>🏛️ Inheritance Tree</h3>
+                    <div class="tree">
+                        <div class="tree-node root">LibraryItem (Abstract)</div>
+                        <div class="tree-children">
+                            <div class="tree-node child">📘 Book</div>
+                            <div class="tree-node child">💻 EBook</div>
+                        </div>
+                        <div class="tree-node root" style="margin-top:12px">User (Abstract)</div>
+                        <div class="tree-children">
+                            <div class="tree-node child">🎓 StudentUser</div>
+                            <div class="tree-node child">👨‍🏫 FacultyUser</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-box">
+                    <h3>⚠️ Custom Exceptions</h3>
+                    <div class="exceptions-list">
+                        <div class="exc-item"><span class="exc-icon">🔴</span><code>LibraryException</code><br><small>Base domain exception</small></div>
+                        <div class="exc-item"><span class="exc-icon">🟠</span><code>BookNotAvailableException</code><br><small>No copies in stock</small></div>
+                        <div class="exc-item"><span class="exc-icon">🟡</span><code>UserLimitExceededException</code><br><small>Borrow quota exceeded</small></div>
+                        <div class="exc-item"><span class="exc-icon">🔵</span><code>DatabaseException</code><br><small>SQL/JDBC errors</small></div>
+                    </div>
+                </div>
+                <div class="arch-box">
+                    <h3>🔒 Thread Safety</h3>
+                    <div class="code-block">
+                        <code><span class="kw">private final</span> ReentrantLock<br>
+&nbsp;&nbsp;transactionLock = <span class="kw">new</span> ReentrantLock();<br><br>
+<span class="kw">public</span> Transaction issueBook(...) {<br>
+&nbsp;&nbsp;transactionLock.<span class="fn">lock</span>();<br>
+&nbsp;&nbsp;<span class="kw">try</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">// thread-safe issue</span><br>
+&nbsp;&nbsp;} <span class="kw">finally</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;transactionLock.<span class="fn">unlock</span>();<br>
+&nbsp;&nbsp;}<br>
+}</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="section" id="tech">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <p class="section-sub">100% Java — No Python, No frameworks, No external dependencies except SQLite</p>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">☕</div>
+                    <div class="tech-name">Java 21</div>
+                    <div class="tech-desc">Core language with modern features including pattern matching, sealed classes and records</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🖼️</div>
+                    <div class="tech-name">Java Swing</div>
+                    <div class="tech-desc">GUI framework with JFrame, JTabbedPane, JTable, JDialog, RowSorter and event dispatching</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🗃️</div>
+                    <div class="tech-name">SQLite JDBC</div>
+                    <div class="tech-desc">Embedded zero-config database with DriverManager, PreparedStatement and ResultSet</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🧵</div>
+                    <div class="tech-name">Java Concurrency</div>
+                    <div class="tech-desc">ExecutorService, Runnable, Callable&lt;V&gt;, Future and ReentrantLock synchronization</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📦</div>
+                    <div class="tech-name">Collections API</div>
+                    <div class="tech-desc">Generic List&lt;T&gt;, HashMap&lt;K,V&gt;, ArrayList and the GenericDAO&lt;T,ID&gt; pattern</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">⚙️</div>
+                    <div class="tech-name">Batch Scripts</div>
+                    <div class="tech-desc">build.bat for compilation and run.bat for launching — no Maven/Gradle needed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO RUN -->
+    <section class="section dark-section" id="run">
+        <div class="container">
+            <h2 class="section-title white">How to Run</h2>
+            <p class="section-sub white-sub">Get started in under 60 seconds</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3>Clone Repository</h3>
+                    <div class="code-block dark">
+                        <code>git clone https://github.com/chandraabhinav68-pixel/<br>Libray-Management-System.git</code>
+                    </div>
+                    <p>Clone the project from GitHub to your local machine</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3>Build the Project</h3>
+                    <div class="code-block dark">
+                        <code>cd Libray-Management-System<br>build.bat</code>
+                    </div>
+                    <p>Double-click <strong>build.bat</strong> to compile all Java source files into the <code>bin/</code> directory</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3>Launch the App</h3>
+                    <div class="code-block dark">
+                        <code>run.bat</code>
+                    </div>
+                    <p>Double-click <strong>run.bat</strong> to launch the Swing GUI. The SQLite database is created automatically!</p>
+                </div>
+            </div>
+            <div class="req-box">
+                <h3>📋 Requirements</h3>
+                <ul>
+                    <li>✅ JDK 17 or JDK 21+ installed</li>
+                    <li>✅ Windows OS (for .bat files) — or use manual javac/java commands on Linux/Mac</li>
+                    <li>✅ SQLite JDBC driver already included in <code>lib/</code> — no installation needed</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span>📚 Library Management System</span>
+                    <p>Java GUI Project · OOP · JDBC · Multithreading · Collections</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/chandraabhinav68-pixel/Libray-Management-System" target="_blank">GitHub Repository ↗</a>
+                    <a href="https://github.com/chandraabhinav68-pixel/Libray-Management-System/raw/main/presentation/Library_Management_System_Presentation.pdf" target="_blank">Presentation PDF ↗</a>
+                    <a href="https://github.com/chandraabhinav68-pixel/Libray-Management-System/raw/main/presentation/Project_Guide_and_Explanation.pdf" target="_blank">Project Guide PDF ↗</a>
+                </div>
+            </div>
+            <p class="footer-copy">Built with ☕ Java 21 · SQLite JDBC · Java Swing</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
