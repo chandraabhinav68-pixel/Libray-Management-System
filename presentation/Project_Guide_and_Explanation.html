@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Guide & Simple Explanation - Library Management System</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin: 0;
+            padding: 25px;
+            background-color: #ffffff;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 22px;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 6px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #1e3c72;
+            margin-top: 15px;
+        }
+
+        .step-box {
+            background: #ffffff;
+            border-left: 4px solid #27ae60;
+            padding: 12px 18px;
+            margin: 10px 0;
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: #1e3c72;
+        }
+
+        .badge {
+            background: #27ae60;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>📚 Library Management System</h1>
+    <p>Complete Project Guide & Simple Explanation for Students & Evaluators</p>
+</div>
+
+<!-- Section 1 -->
+<div class="section">
+    <h2>1. What is this Project? (Simple Overview)</h2>
+    <p>This project is a <strong>Desktop Application</strong> built in <strong>Java</strong> to help a library manage its day-to-day operations easily. It provides a visual graphical interface (GUI) where librarians can perform all key tasks:</p>
+    <ul>
+        <li><strong>Manage Books & E-Books</strong>: Add new items, update details, search by title/author/category, and delete old items.</li>
+        <li><strong>Manage Members</strong>: Register Students and Faculty members with specific loan rules (students can borrow 3 books for 14 days; faculty can borrow 10 books for 30 days with a 50% discount on overdue fines).</li>
+        <li><strong>Issue & Return Books</strong>: Issue books to users, track return due dates, and calculate overdue fines automatically when books are returned late.</li>
+        <li><strong>Background Tasks (Multithreading)</strong>: Calculate overdue fines for all users in the background and export library reports to CSV files without slowing down the application window.</li>
+    </ul>
+</div>
+
+<!-- Section 2 -->
+<div class="section">
+    <h2>2. What Should You Do to Run & Test the Project?</h2>
+    <p>Follow these 3 easy steps to run the application on your computer:</p>
+    
+    <div class="step-box">
+        <strong>Step 1: Open the Project Folder</strong><br>
+        Go to your Desktop folder: <code>C:\Users\abhinav\OneDrive\Desktop\Library Management System</code>
+    </div>
+
+    <div class="step-box">
+        <strong>Step 2: Compile the Code</strong><br>
+        Double-click the file named <strong><code>build.bat</code></strong>. This compiles all Java files into runnable class files.
+    </div>
+
+    <div class="step-box">
+        <strong>Step 3: Launch the Application</strong><br>
+        Double-click the file named <strong><code>run.bat</code></strong>. The main window will pop up automatically on your screen!
+    </div>
+</div>
+
+<!-- Section 3 -->
+<div class="section">
+    <h2>3. Simple Explanation of Key Project Modules</h2>
+    
+    <h3>A. Object-Oriented Programming (OOP)</h3>
+    <p>The system uses core OOP concepts to structure the code neatly:</p>
+    <ul>
+        <li><strong>Abstraction & Interfaces (<code>Borrowable</code>, <code>Searchable</code>)</strong>: Defines standard actions (like issuing, returning, and searching) that entities must follow.</li>
+        <li><strong>Inheritance (Base & Child Classes)</strong>: <code>LibraryItem</code> is the parent class for <code>Book</code> and <code>EBook</code>. <code>User</code> is the parent class for <code>StudentUser</code> and <code>FacultyUser</code>.</li>
+        <li><strong>Polymorphism (Dynamic Rules)</strong>: <code>calculateOverdueFine()</code> charges physical books $1.50/day and digital e-books $0.50/day. Faculty members get a 50% discount on overdue charges.</li>
+        <li><strong>Custom Exception Handling</strong>: Prevents crashes when errors occur (e.g., trying to borrow an out-of-stock book throws a custom <code>BookNotAvailableException</code>).</li>
+    </ul>
+
+    <h3>B. Database Connectivity (JDBC & SQLite)</h3>
+    <p>All data is saved in a local database file named <code>library.db</code> using <strong>JDBC (Java Database Connectivity)</strong> so your books and user profiles remain saved even when you close and re-open the application.</p>
+
+    <h3>C. Multithreading (Background Operations)</h3>
+    <p>The application uses separate background worker threads so heavy tasks run smoothly in the background:</p>
+    <ul>
+        <li><strong>Fine Sweep Task (<code>Runnable</code>)</strong>: Audits all active loans and updates overdue charges without locking the screen.</li>
+        <li><strong>Catalog Export Task (<code>Callable</code>)</strong>: Exports book inventory data to a CSV spreadsheet file asynchronously.</li>
+    </ul>
+</div>
+
+<!-- Section 4 -->
+<div class="section">
+    <h2>4. Project Marking Rubric Summary</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Rubric Requirement</th>
+                <th>Implementation in Code</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>OOP Implementation</strong></td>
+                <td>Interfaces (<code>Borrowable</code>, <code>Searchable</code>), Inheritance (<code>Book</code>, <code>EBook</code>, <code>User</code>), Polymorphic fines, Custom Exceptions</td>
+                <td><span class="badge">Complete</span></td>
+            </tr>
+            <tr>
+                <td><strong>Collections & Generics</strong></td>
+                <td>Generic DAO (<code>GenericDAO&lt;T, ID&gt;</code>), ArrayLists, and HashMap memory caches</td>
+                <td><span class="badge">Complete</span></td>
+            </tr>
+            <tr>
+                <td><strong>Multithreading & Synchronization</strong></td>
+                <td><code>FineCalculationTask</code> (Runnable), <code>BackupTask</code> (Callable), <code>ReentrantLock</code> synchronization</td>
+                <td><span class="badge">Complete</span></td>
+            </tr>
+            <tr>
+                <td><strong>Database Operations (DAO)</strong></td>
+                <td>Clean Data Access Object pattern: <code>BookDAO</code>, <code>UserDAO</code>, <code>TransactionDAO</code></td>
+                <td><span class="badge">Complete</span></td>
+            </tr>
+            <tr>
+                <td><strong>Database Connectivity (JDBC)</strong></td>
+                <td>SQLite JDBC connection manager with PreparedStatements & ResultSet mapping</td>
+                <td><span class="badge">Complete</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Section 5 -->
+<div class="section">
+    <h2>5. What to Submit to Your Evaluator / Teacher</h2>
+    <p>When submitting your project, provide the following 2 items:</p>
+    <ol>
+        <li><strong>GitHub Repository URL</strong>:<br>
+        <code>https://github.com/chandraabhinav68-pixel/Libray-Management-System</code></li>
+        <li><strong>Presentation & Guide PDF Files</strong>:<br>
+        • <code>Library_Management_System_Presentation.pdf</code> (Visual slides & architecture)<br>
+        • <code>Project_Guide_and_Explanation.pdf</code> (This simple explanation guide)</li>
+    </ol>
+</div>
+
+</body>
+</html>
